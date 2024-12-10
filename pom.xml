@@ -56,6 +56,15 @@
             <artifactId>akka-actor-testkit-typed_${scala.binary.version}</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-stream-typed_${scala.binary.version}</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-stream-testkit_${scala.binary.version}</artifactId>
+            <scope>test</scope>
+        </dependency>
 
         <!-- Use Coda Hale Metrics -->
         <dependency>
@@ -65,6 +74,10 @@
         <dependency>
             <groupId>com.lightbend.cinnamon</groupId>
             <artifactId>cinnamon-akka-typed_${scala.binary.version}</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.lightbend.cinnamon</groupId>
+            <artifactId>cinnamon-akka-stream_${scala.binary.version}</artifactId>
         </dependency>
         <dependency>
             <groupId>com.lightbend.cinnamon</groupId>
@@ -134,7 +147,7 @@
                 <configuration>
                     <executable>java</executable>
                     <arguments>
-                        <argument>-javaagent:${project.build.directory}/dependency/cinnamon-agent.jar</argument>
+                        <argument>-javaagent:${project.build.directory}/dependency/cinnamon-agent.jar=loglevel=DEBUG</argument>
                         <argument>-Djava.library.path=target/lib</argument>
                         <argument>-classpath</argument>
                         <classpath />
