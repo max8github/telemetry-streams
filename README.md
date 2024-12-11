@@ -3,12 +3,27 @@
 ## Quickstart guide
 
 This example is described in https://doc.akka.io/libraries/akka-core/current/typed/actors.html#first-example
+In addition, Telemetry is included here: cinnamon dependencies and configuration to get JVM metrics and Actor metrics in Grafana.
 
-The Hello World example illustrates Akka basics. Within 10 minutes, you should be able to download and run the example and read the Introduction to Actors documentation to understand how the example is constructed. This will get your feet wet, and hopefully inspire you to dive deeper into the wonderful sea of Akka!
+In order to run Grafana and Prometheus, use docker.  
+See instructions [here](https://doc.akka.io/libraries/akka-insights/current//sandbox/prometheus-sandbox.html), where you have to download:
+```
+curl -O https://downloads.lightbend.com/cinnamon/sandbox/cinnamon-prometheus-docker-sandbox-2.21.2.zip
+unzip cinnamon-prometheus-docker-sandbox-2.21.2.zip
+```
+
+Note: for this to work, your `settings.xml` must contain the Akka Commercial Repository with the licenced token, which looks like:
+```
+ <repository>
+    <id>akka-commercial</id>
+    <name>Akka Commercial</name>
+    <url>https://repo.akka.com/pass/XXXXXXXXXXXX/commercial-releases</url>
+ </repository>
+```
+
 
 ## How to run
 
-This template also provides build descriptors for maven and gradle. You can use any of the following commands to run the application:
 ```
 mvn clean compile exec:exec
 ```

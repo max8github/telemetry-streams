@@ -21,7 +21,7 @@ public class Main extends AbstractBehavior<Main.SayHello> {
     system.tell(new Main.SayHello("Akka"));
     
 
-    Thread.sleep(3000);
+    Thread.sleep(30000);
     system.terminate();
   }
   
